@@ -1,0 +1,36 @@
+.control-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 1rem;
+  p {
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+}
+
+.result-wrapper {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 13rem;
+  .gif-result {
+    aspect-ratio: 16 / 9;
+    background-color: rgba(244, 246, 253, 0.25);
+    &.loading {
+      animation: gifLoading 1s infinite alternate ease-in-out;
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
+    }
+  }
+}
+
+@keyframes gifLoading {
+  0% {
+    background-color: rgba(244, 246, 253, 0.5);
+  }
+  100% {
+    background-color: rgba(244, 246, 253, 0.25);
+  }
+}

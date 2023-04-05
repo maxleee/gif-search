@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SearchComponent } from './components/search/search.component';
+import { ResultGridComponent } from './components/result-grid/result-grid.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { SearchComponent } from './components/search/search.component';
     HeaderComponent,
     FooterComponent,
     SearchComponent,
+    ResultGridComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
