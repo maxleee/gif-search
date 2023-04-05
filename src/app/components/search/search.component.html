@@ -1,8 +1,14 @@
-<form class="search-form">
+<form class="search-form" (ngSubmit)="handleSubmit()">
   <label for="search">Search for a GIF</label>
   <div class="input-wrapper">
-    <input type="text" name="search" id="search" placeholder="Search" />
-    <button type="submit">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      name="search"
+      id="search"
+      placeholder="Search"
+    />
+    <button type="submit" [disabled]="!searchTerm">
       <span class="sr-only">Submit</span
       ><svg
         width="19"
@@ -10,6 +16,7 @@
         viewBox="0 0 19 19"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
       >
         <circle
           cx="8.06522"

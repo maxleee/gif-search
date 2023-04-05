@@ -21,7 +21,7 @@
     input[type="text"] {
       width: 100%;
       background: #1e1e1e;
-      padding: 0.7rem;
+      padding: 0.5rem;
       color: inherit;
       border: none;
       border-radius: 5px;
@@ -32,7 +32,20 @@
     button[type="submit"] {
       border: none;
       border-radius: 5px;
-      padding: 0rem 1rem;
+      padding: 0rem 0.75rem;
+      background: #d662ff;
+      transition: 0.4s all ease-out;
+      &[disabled] {
+        background: transparent;
+        svg {
+          circle {
+            stroke: #f4f6fd;
+          }
+          path {
+            fill: #f4f6fd;
+          }
+        }
+      }
     }
   }
 }
