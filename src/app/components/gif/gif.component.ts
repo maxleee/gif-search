@@ -22,7 +22,7 @@ export class GifComponent implements OnInit {
   }
 
   handleClick() {
-    navigator.clipboard.writeText(this.gif.embed_url);
+    navigator.clipboard.writeText(this.gif.images.fixed_width.url);
     this.isClicked = true;
     setTimeout(() => {
       this.isClicked = false;

@@ -7,6 +7,7 @@
   background-color: transparent;
   animation: gifLoading 1s 0.3s infinite alternate ease-in-out;
   height: fit-content;
+  transition: transform 0.3s ease-out;
   img {
     width: 100%;
     opacity: 0;
