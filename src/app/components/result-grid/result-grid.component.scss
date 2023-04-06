@@ -16,3 +16,35 @@
   gap: 1rem;
   margin-bottom: 4rem;
 }
+
+.autoplay-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  position: relative;
+  transition: all 0.3s ease-out;
+  &:focus-within {
+    border: #d662ff solid 1px;
+    box-shadow: 0 2px 8px 2px rgba(214, 98, 255, 0.4);
+  }
+}
+.autoplay-checkbox {
+  position: absolute;
+  width: 1.3125rem;
+  height: 0.6875rem;
+  opacity: 0;
+  ~ .toggle {
+    circle {
+      transition: all 0.3s ease-out;
+      fill: #fff;
+      transform: translateX(-10px);
+    }
+  }
+}
+
+.autoplay-checkbox:checked ~ .toggle {
+  circle {
+    fill: #5aea57;
+    transform: translateX(0);
+  }
+}
