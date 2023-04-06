@@ -8,8 +8,15 @@
   [ngClass]="{ loaded: !isLoading }"
   (click)="handleClick()"
 >
+  <source
+    [srcset]="gif.images.fixed_width_still.url"
+    media="(prefers-reduced-motion: reduce)"
+  />
+
   <img
-    [src]="gif.images.fixed_width.url"
+    [src]="
+      autoplay ? gif.images.fixed_width.url : gif.images.fixed_width_still.url
+    "
     [alt]="gif.title"
     loading="lazy"
     (load)="handleLoad()"

@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class GifComponent implements OnInit {
   @Input() gif!: any;
+  @Input() autoplay: boolean = true;
 
   height!: string;
 

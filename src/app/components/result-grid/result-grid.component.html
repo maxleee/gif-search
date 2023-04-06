@@ -1,6 +1,15 @@
 <div *ngIf="gifs.length > 0" class="control-wrapper">
   <p>Tap a GIF to copy</p>
+  <div>
+    <input
+      type="checkbox"
+      [(ngModel)]="autoplay"
+      name="autoplay"
+      id="autoplay"
+    />
+    <label for="autoplay">Autoplay</label>
+  </div>
 </div>
 <div *ngIf="gifs.length > 0" class="result-wrapper">
-  <app-gif *ngFor="let gif of gifs" [gif]="gif"></app-gif>
+  <app-gif *ngFor="let gif of gifs" [gif]="gif" [autoplay]="autoplay"></app-gif>
 </div>
