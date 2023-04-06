@@ -4,24 +4,26 @@
 }
 
 .gif-result {
-  background-color: rgba(244, 246, 253, 0.25);
-  visibility: hidden;
-  transition: all 0.3s ease-out;
+  background-color: transparent;
+  animation: gifLoading 0.3s 1s infinite alternate ease-in-out;
+  height: fit-content;
   img {
     width: 100%;
-  }
-  &.loading {
-    animation: gifLoading 1s infinite alternate ease-in-out;
-    visibility: unset;
-    @media (prefers-reduced-motion: reduce) {
-      animation: none;
-    }
+    opacity: 0;
+    transition: all 1s ease-out;
   }
   &.loaded {
-    visibility: unset;
+    background-color: transparent;
+    animation: none;
+    img {
+      opacity: 1;
+    }
   }
   &:active {
     transform: scale(0.9);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
   }
 }
 
@@ -50,9 +52,9 @@
 
 @keyframes gifLoading {
   0% {
-    background-color: rgba(244, 246, 253, 0.5);
+    background-color: rgba(244, 246, 253, 0.25);
   }
   100% {
-    background-color: rgba(244, 246, 253, 0.25);
+    background-color: rgba(244, 246, 253, 0.5);
   }
 }
