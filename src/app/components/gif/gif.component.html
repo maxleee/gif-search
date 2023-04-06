@@ -1,1 +1,17 @@
-<picture class="gif-result loading"> </picture>
+<div
+  *ngIf="isLoading"
+  class="gif-result loading"
+  [ngStyle]="{ height: height + 'px' }"
+></div>
+<picture
+  class="gif-result"
+  [ngClass]="{ loaded: !isLoading }"
+  (click)="handleClick()"
+>
+  <img
+    [src]="gif.images.fixed_width.url"
+    [alt]="gif.title"
+    loading="lazy"
+    (load)="handleLoad()"
+  />
+</picture>

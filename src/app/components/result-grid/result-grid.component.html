@@ -1,6 +1,6 @@
-<div class="control-wrapper">
+<div *ngIf="gifs.length > 0" class="control-wrapper">
   <p>Tap to copy</p>
 </div>
-<div class="result-wrapper">
-  <app-gif></app-gif>
+<div *ngIf="gifs.length > 0" class="result-wrapper">
+  <app-gif *ngFor="let gif of gifs" [gif]="gif"></app-gif>
 </div>

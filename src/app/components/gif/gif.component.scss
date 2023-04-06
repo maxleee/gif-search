@@ -1,11 +1,22 @@
+:host {
+  width: 100%;
+}
+
 .gif-result {
-  aspect-ratio: 16 / 9;
   background-color: rgba(244, 246, 253, 0.25);
+  visibility: hidden;
+  img {
+    width: 100%;
+  }
   &.loading {
     animation: gifLoading 1s infinite alternate ease-in-out;
+    visibility: unset;
     @media (prefers-reduced-motion: reduce) {
       animation: none;
     }
+  }
+  &.loaded {
+    visibility: unset;
   }
 }
 
