@@ -29,4 +29,10 @@ export class GifComponent implements OnInit {
       this.isClicked = false;
     }, 2000);
   }
+
+  handleKeydown(e: any) {
+    if (e.key === 'Enter') {
+      this.handleClick();
+    } else return;
+  }
 }
