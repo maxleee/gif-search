@@ -11,6 +11,7 @@ export class GifComponent implements OnInit {
   height!: string;
 
   isLoading: boolean = true;
+  isClicked: boolean = false;
 
   ngOnInit(): void {
     this.height = this.gif.images.fixed_width.height;
@@ -22,6 +23,9 @@ export class GifComponent implements OnInit {
 
   handleClick() {
     navigator.clipboard.writeText(this.gif.embed_url);
-    console.log('copied');
+    this.isClicked = true;
+    setTimeout(() => {
+      this.isClicked = false;
+    }, 2000);
   }
 }
