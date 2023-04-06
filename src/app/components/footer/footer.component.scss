@@ -1,9 +1,8 @@
 .footer {
   width: 100%;
   padding-block: 1rem;
-  position: fixed;
-  bottom: 0;
   background: #28292d;
+  place-self: end;
   .giphy-logo {
     margin: 0 auto;
     width: 25%;
