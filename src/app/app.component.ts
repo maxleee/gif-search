@@ -8,13 +8,18 @@ import { GiphyService } from './giphy.service';
 })
 export class AppComponent {
   gifs: any = [];
+  error!: any;
 
   constructor(private giphyService: GiphyService) {}
 
   getGifs(query: string, offset: number) {
     this.gifs.loading = true;
-    this.giphyService
-      .getGifs(query, offset)
-      .subscribe((data) => (this.gifs = data.data));
+    this.giphyService.getGifs(query, offset).subscribe({
+      next: (data) => (this.gifs = data.data),
+      error: (error) => {
+        console.log(error);
+        this.error = error;
+      },
+    });
   }
 }

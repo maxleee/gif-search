@@ -35,3 +35,7 @@
 <div *ngIf="gifs.length > 0" class="result-wrapper">
   <app-gif *ngFor="let gif of gifs" [gif]="gif" [autoplay]="autoplay"></app-gif>
 </div>
+<div *ngIf="error" class="error-message">
+  <p>Something went wrong, try again in a moment!</p>
+  <p class="technical-error-text">{{ error.statusText }}</p>
+</div>

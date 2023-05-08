@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class ResultGridComponent {
   @Input() gifs: any;
+  @Input() error!: any;
   autoplay: boolean = true;
 }

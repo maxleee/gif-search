@@ -13,6 +13,6 @@ export class GiphyService {
 
   getGifs(query: string, offset: number): Observable<any> {
     const url = `${this.baseApiUrl}&q=${query}&offset=${offset}`;
-    return this.http.get(`${url}`);
+    return this.http.get(url);
   }
 }

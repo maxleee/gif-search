@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="main-wrapper">
   <app-search (onSubmit)="getGifs($event, 0)"></app-search>
-  <app-result-grid [gifs]="gifs"></app-result-grid>
+  <app-result-grid [gifs]="gifs" [error]="error"></app-result-grid>
   <app-footer></app-footer>
 </div>

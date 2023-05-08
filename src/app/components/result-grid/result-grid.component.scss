@@ -48,3 +48,13 @@
     transform: translateX(0);
   }
 }
+
+.error-message {
+  text-align: center;
+  place-self: center;
+
+  .technical-error-text {
+    font-size: 0.8rem;
+    color: #a7a7ab;
+  }
+}
