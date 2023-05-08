@@ -14,12 +14,12 @@ export class AppComponent {
 
   getGifs(query: string, offset: number) {
     this.gifs.loading = true;
-    this.giphyService.getGifs(query, offset).subscribe(
-      (data) => (this.gifs = data.data),
-      (error) => {
+    this.giphyService.getGifs(query, offset).subscribe({
+      next: (data) => (this.gifs = data.data),
+      error: (error) => {
         console.log(error);
         this.error = error;
-      }
-    );
+      },
+    });
   }
 }
