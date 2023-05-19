@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { GIFObject } from 'giphy-api';
 
 @Component({
   selector: 'app-gif',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./gif.component.scss'],
 })
 export class GifComponent implements OnInit {
-  @Input() gif!: any;
+  @Input() gif!: GIFObject;
   @Input() autoplay: boolean = true;
 
   height!: string;
@@ -18,11 +19,11 @@ export class GifComponent implements OnInit {
     this.height = this.gif.images.fixed_width.height;
   }
 
-  handleLoad() {
+  handleLoad(): void {
     this.isLoading = false;
   }
 
-  handleClick() {
+  handleClick(): void {
     navigator.clipboard.writeText(this.gif.images.fixed_width.url);
     this.isClicked = true;
     setTimeout(() => {
@@ -30,7 +31,7 @@ export class GifComponent implements OnInit {
     }, 2000);
   }
 
-  handleKeydown(e: any) {
+  handleKeydown(e: any): void {
     if (e.key === 'Enter') {
       this.handleClick();
     } else return;

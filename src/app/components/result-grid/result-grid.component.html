@@ -1,4 +1,4 @@
-<div *ngIf="gifs.length > 0" class="control-wrapper">
+<div *ngIf="gifs" class="control-wrapper">
   <p>Tap a GIF to copy URL</p>
   <div class="autoplay-wrapper">
     <input
@@ -32,7 +32,7 @@
     <label for="autoplay">Autoplay</label>
   </div>
 </div>
-<div *ngIf="gifs.length > 0" class="result-wrapper">
+<div *ngIf="gifs" class="result-wrapper">
   <app-gif *ngFor="let gif of gifs" [gif]="gif" [autoplay]="autoplay"></app-gif>
 </div>
 <div *ngIf="error" class="error-message">

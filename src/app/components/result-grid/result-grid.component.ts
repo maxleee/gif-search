@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { GIFObject, MultiResponse } from 'giphy-api';
 
 @Component({
   selector: 'app-result-grid',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./result-grid.component.scss'],
 })
 export class ResultGridComponent {
-  @Input() gifs: any;
+  @Input() gifs!: GIFObject[];
   @Input() error!: any;
   autoplay: boolean = true;
 }

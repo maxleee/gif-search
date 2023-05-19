@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { MultiResponse } from 'giphy-api';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ export class GiphyService {
 
   constructor(private http: HttpClient) {}
 
-  getGifs(query: string, offset: number): Observable<any> {
+  getGifs(query: string, offset?: number | undefined): Observable<any> {
     const url = `${this.baseApiUrl}&q=${query}&offset=${offset}`;
     return this.http.get(url);
   }
