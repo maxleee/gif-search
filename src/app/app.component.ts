@@ -13,9 +13,9 @@ export class AppComponent {
 
   constructor(private giphyService: GiphyService) {}
 
-  getGifs(query: string, offset: number) {
+  getGifs(query: string, offset?: number | undefined) {
     this.giphyService.getGifs(query, offset).subscribe({
-      next: (data) => (this.gifs = data.data),
+      next: (data: MultiResponse) => (this.gifs = data.data),
       error: (error) => {
         console.log(error);
         this.error = error;
