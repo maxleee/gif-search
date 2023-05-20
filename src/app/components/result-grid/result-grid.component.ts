@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { GIFObject, MultiResponse } from 'giphy-api';
+import { GIFObject } from 'giphy-api';
 
 @Component({
   selector: 'app-result-grid',
